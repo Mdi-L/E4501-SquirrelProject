@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A list of all squirrel sightings with links to view each sighting</title>
+</head>
+<body>
+	<ul>
+	{% for sighting in sightings %}
+	<li>{{sighting.unique_squirrel_id}}  {{sighting.date}}  <a href="{% url 'squirrel:detail' %}">link to detail</a></li>
+	{% endfor %}
+</body>
+</html>
