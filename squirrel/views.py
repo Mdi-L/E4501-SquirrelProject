@@ -29,10 +29,10 @@ def general_stats(request):
 def update(request,input_unique_squirrel_id):
     result = {}
     sighting = get_object_or_404(Sightings, squirrel_unique_id = input_unique_squirrel_id)    
-    if request.method == 'POST':
+    if request.method == 'POST' and request.POST:
         sighting.latitude = request.POST.get('latitude')
         sighting.longitude = request.POST.get('longigude')
-        sighting.unique_squirrel_id = request.POST.get('Unique_squirrel_id')
+        sighting.unique_squirrel_id = request.POST.get('unique_squirrel_id')
         sighting.shift = request.POST.get('shift')
         sighting.date = request.POST.get('date')
         sighting.age = request.POST.get('age')
@@ -44,7 +44,7 @@ def update(request,input_unique_squirrel_id):
 
 def create(request):
     result = ''
-    if request.method == 'POST':
+    if request.method == 'POST' and request.POST:
         latitude = request.POST.get('latitude')
         longitude = request.POST.get('longigude')
         unique_squirrel_id = request.POST.get('Unique_squirrel_id')
@@ -71,4 +71,3 @@ def detail(request,input_unique_squirrel_id):
             }
     return render(request, 'squirrel/detail.html',context)
 
-# Create your views here.

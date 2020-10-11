@@ -21,6 +21,11 @@
 			<label for="age">Age: </label>
                         <input type="number" name="age" style="width:150px"><br><br>
 			<input type="reset">&nbsp;&nbsp;&nbsp;<input type="submit">
+			{% if result.statu == 'success' %}
+               	 	<p style="text-align:center;color:green">Successfully updated!</p>
+			{% elif result.statu == 'error' %}
+                        <p style="text-align:center;color:red">ERROR</p>
+                	{% endif %}
 		</form>
 	</div>
 </body>
