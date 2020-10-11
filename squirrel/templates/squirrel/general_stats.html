@@ -5,6 +5,23 @@
   <title>General Stats</title>
 </head>
 <body>
-
+	<table border="1">
+		<tr>
+			<th>Latitude</th>
+			<th>Longitute</th>
+			<th>Unique Squirrel ID</th>
+			<th>Shift</th>
+			<th>Age</th>
+		</tr>
+		{% for sighting in sightings %}
+		<tr>
+			<td>{{sighting.latitude}}</td>
+			<td>{{sighting.longitude}}</td>
+			<td>{{sighting.unique_squirrel_id}}</td>
+			<td>{{sighting.shift}}</td>
+			<td>{{sifhting.age}}</td>
+		</tr>
+		{% endfor %}
+	</table>
 </body>
 </html>
