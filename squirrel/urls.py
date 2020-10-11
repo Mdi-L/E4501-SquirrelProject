@@ -5,7 +5,7 @@ from . import views
 app_name = 'squirrel'
 
 urlpatterns = [
-        path('map', views.map)
+        path('map', views.map),
         path('sightings', views.list_with_links, name='list'),
         path('sightings/<input_unique_squirrel_id>/', views.update),
         path('sightings/add/', views.create, name='create'),

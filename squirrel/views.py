@@ -40,7 +40,7 @@ def update(request,input_unique_squirrel_id):
         result['statu'] = 'success'
     else:
         result['statu'] = 'error'
-    retuen render(request, 'squirrel/update.html', {'result',result})
+    return render(request, 'squirrel/update.html', {'result',result})
 
 def create(request):
     result = ''
