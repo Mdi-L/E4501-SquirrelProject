@@ -1,79 +1,82 @@
-from django.db import models
-
+from django.db  import models
+  
 class Sightings(models.Model):
     latitude = models.DecimalField(
-            max_digits=5, 
-            decimal_places=2
+            max_digits = 17,
+            decimal_places = 15
             )
-
+			
     longitude = models.DecimalField(
-            max_digits=5,
-            decimal_places=2
+            max_digits = 17,
+            decimal_places = 15
             )
-
+			
     unique_squirrel_id = models.CharField(
             max_length = 15,
             )
-
-    AM='AM'
-    PM='PM'
-    ShiftChoice = ((AM,'AM'),(PM,'PM'))
+	
     shift = models.CharField(
-            max_length = 2,
-            choices = ShiftChoice
+            max_length = 2
             )
-
-    date = models.DateField()
-    
-    Adult = 'Adult'
-    Juvenile = 'Juvenile'
-    AgeChoice = ((Adult,'Adult'),(Juvenile,'Juvenile'))
+			
+    date = models.CharField(
+	    max_length = 8
+	    )
+			
     age = models.CharField(
             max_length = 15,
-            choices = AgeChoice,
             blank = True,
+	    null = True
             )
-    
+			
     primary_fur_color = models.CharField(
             max_length = 20,
             blank = True,
+            null = True
             )
-
+			
     location = models.CharField(
-            max_length = 20,
+            max_length = 30,
             blank = True,
+	    null = True
             )
-
-    specific_location = models.TextField(
-            blank = True
+			
+    specifi_location = models.TextField(
+            blank = True,
+            null = True
             )
-
+			     
     running = models.BooleanField()
-
+	
     chasing = models.BooleanField()
-
+	
     climbing = models.BooleanField()
-
+    
     eating = models.BooleanField()
-
+    
     foraging = models.BooleanField()
-
+    
     other_activities = models.TextField(
             blank = True,
+	    null = True
             )
-
+    
     kuks = models.BooleanField()
-
-    quaas = models.BooleanField()           
-
+	
+    quaas = models.BooleanField()
+        	
     moans = models.BooleanField()
-
+        	
     tail_flags = models.BooleanField()
-    
+        	
     tail_twitches = models.BooleanField()
-
+        	
     approaches = models.BooleanField()
-    
+        	
+    indifferent = models.BooleanField()
+        	
     runs_from = models.BooleanField()
+
+
 
 # Create your models here.
