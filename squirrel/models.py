@@ -1,18 +1,16 @@
 from django.db  import models
   
 class Sightings(models.Model):
-    latitude = models.DecimalField(
-            max_digits = 17,
-            decimal_places = 15
+    latitude = models.CharField(
+            max_length = 20
             )
 			
-    longitude = models.DecimalField(
-            max_digits = 17,
-            decimal_places = 15
+    longitude = models.CharField(
+            max_length = 20
             )
 			
     unique_squirrel_id = models.CharField(
-            max_length = 15,
+            max_length = 15
             )
 	
     shift = models.CharField(
@@ -46,37 +44,39 @@ class Sightings(models.Model):
             null = True
             )
 			     
-    running = models.BooleanField()
+    running = models.CharField(max_length = 8)
 	
-    chasing = models.BooleanField()
+    chasing = models.CharField(max_length = 8)
 	
-    climbing = models.BooleanField()
+    climbing = models.CharField(max_length = 8)
     
-    eating = models.BooleanField()
+    eating = models.CharField(max_length = 8)
     
-    foraging = models.BooleanField()
+    foraging = models.CharField(max_length = 8)
     
     other_activities = models.TextField(
             blank = True,
 	    null = True
             )
     
-    kuks = models.BooleanField()
+    kuks = models.CharField(max_length = 8)
 	
-    quaas = models.BooleanField()
-        	
-    moans = models.BooleanField()
-        	
-    tail_flags = models.BooleanField()
-        	
-    tail_twitches = models.BooleanField()
-        	
-    approaches = models.BooleanField()
-        	
-    indifferent = models.BooleanField()
-        	
-    runs_from = models.BooleanField()
-
-
+    quaas = models.CharField(max_length = 8)
+	
+    moans = models.CharField(max_length = 8)
+	
+    tail_flags = models.CharField(max_length = 8)
+	
+    tail_twitches = models.CharField(max_length = 8)
+    
+    approaches = models.CharField(max_length = 8)
+	
+    indifferent = models.CharField(
+            max_length = 8,
+            null = True
+            )
+	
+    runs_from = models.CharField(max_length = 8)
+			
 
 # Create your models here.
