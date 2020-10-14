@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>all squirrel sightings</title>
+        </head>
+	<body>
+		<ul>
+		{% for sighting in all_squrriels_sightings %}
+                	<li>{{ sighting.unique_squirrel_id }} {{ sighting.date  }}</li>
+		{% endfor %}
+		</ul>
+        </body>
+</html>

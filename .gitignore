@@ -6,3 +6,11 @@ db.sqlite3
 .urls.py.swp
 project/.settings.py.swp
 __pycache__/
+.ignoregit.swp
+squirrel/.models.py.swk 
+squirrel/.views.py.swn
+squirrel/.views.py.swo
+squirrel/.views.py.swp
+squirrel/templates/squirrel/.sightings.html.swp
+squirrel/templates/squirrel/.sightings.thml.swp
+squirrel/templates/squirrel/.update.html.swp
