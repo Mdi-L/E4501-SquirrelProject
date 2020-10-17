@@ -12,10 +12,10 @@
 			<h1 class='text-center'><strong> Squirrelhub </strong></h1>
 			<br>
 			<div>
-				<a href="", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Back to Squirrelhub</strong></a>
+				<a href="/squirrelhub/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Back to Squirrelhub</strong></a>
 				<a href="/map/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Squirrel Sightings Map</strong></a>
-				<a href="/add/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Add a Squirrel Sighting</strong></a>
-				<a href="/stats/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Statistical Information about Squirrel Sightings</strong></a>
+				<a href="/sightings/add/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Add a Squirrel Sighting</strong></a>
+				<a href="/sightings/stats/", class="btn btn-outline-dark btn-block active", role="button", aria-pressed="true"><strong>Statistical Information about Squirrel Sightings</strong></a>
 			</div>
 			<br>
 			<br>
@@ -35,7 +35,7 @@
 				{% for sighting in allsightings %}
 					<tr>
 						<td>{{ sighting.unique_squirrel_id }}</td>
-						<td>{{ date }}</td>
+						<td>{{ sighting.date }}</td>
 						<td><a href="{{ sighting.unique_squirrel_id }}">click to view detail and update {{sighting.unique_squirrel_id}}</a></td>
 					</tr>
 				{% endfor %}

@@ -8,14 +8,16 @@ class Command(LabelCommand):
 		
     def handle_label(self, label, **options):
 
-        data=csv.reader(open(label), delimiter=',', quotechar='"')
-		
-		def trans_bool(origin):
-			return origin.lower() == 'true'
-		
-		for row in data:
-            
-			Sightings.objects.get_or_create(
+        data=csv.reader(open(label))
+        
+        def trans_bool(origin):
+            return str(origin).lower() == 'true'
+        firstrow = True
+        for row in data:
+            if firstrow:
+                firstrow = False
+                continue
+            Sightings.objects.get_or_create(
 			
                 latitude = float(row[0]),
                 longitude = float(row[1]),

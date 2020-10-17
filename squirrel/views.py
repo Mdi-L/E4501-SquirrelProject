@@ -29,14 +29,14 @@ def sightings(request):
 
 
 	
-def update(request, input_id):
-    sighting = get_object_or_404(Sightings, unique_squirrel_id = input_id)
+def update(request,unique_squirrel_id ):
+    sighting = Sightings.objects.get(unique_squirrel_id = unique_squirrel_id )
 	
     if request.method == 'POST' and request.POST:
         form = sightingForm(request.POST, instance = sighting)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/{input_id}')
+            return redirect(f'/sightings/{unique_squirrel_id}')
     else:
         form = sightingForm(instance = sighting)
 	
