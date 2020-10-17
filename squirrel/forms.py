@@ -4,5 +4,5 @@ from .models import Sightings
 
 class sightingForm(ModelForm):
     class Meta:
-	model = Sightings
-	fields = '__all__'
+        model = Sightings
+        fields = '__all__'

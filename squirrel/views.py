@@ -33,10 +33,10 @@ def update(request, input_id):
     sighting = get_object_or_404(Sightings, unique_squirrel_id = input_id)
 	
     if request.method == 'POST' and request.POST:
-	form = sightingForm(request.POST, instance = sighting)
-	if form.is_valid():
-	    form.save()
-	    return redirect(f'/sightings/{input_id}')
+        form = sightingForm(request.POST, instance = sighting)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings/{input_id}')
     else:
         form = sightingForm(instance = sighting)
 	
@@ -49,11 +49,11 @@ def update(request, input_id):
 def add(request):
     if request.method == 'POST' and request.POST:
         form = sightingForm(request.POST)
-	if form.is_valid():
-	    form.save()
-	    return redirect(f'/sightings/')
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings/')
     else:
-	form = sightingForm()
+        form = sightingForm()
 	
     context = {
             'form': form

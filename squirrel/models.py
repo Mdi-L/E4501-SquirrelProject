@@ -21,7 +21,6 @@ class Sightings(models.Model):
 	
     shift = models.CharField(
 		max_length = 2,
-		default = AM,
 		help_text = _('shift: AM? PM?')
 		)
 
@@ -128,9 +127,8 @@ class Sightings(models.Model):
 		default = False,
 		help_text = _('runs from?')
 		)
-		
     def __str__(self):
-	return self.name
+        return self.name
 
 			
 
