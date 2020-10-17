@@ -4,7 +4,7 @@
 	  <meta charset="utf-8">
 	  <meta name = 'author', content = 'Mudi Li & Ankang Yang'>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	  <title>squirrel sightings update</title>
+	  <title>squirrel sightings adding</title>
 	</head>
 		
 	<body>
@@ -13,7 +13,7 @@
 			<br>
 			<br>
 			<div>
-				<h2 class="btn btn-outline-warning btn-block active"><strong> Update  Squirrel Sighting of {{sighting.unique_squirrel_id}}</strong></h2>
+				<h2 class="btn btn-outline-warning btn-block active"><strong> Add a New Squirrel Sighting</strong></h2>
 			</div>
 			<br>
 			<br>
@@ -21,13 +21,11 @@
 				{% csrf_token %}
 				{{form.as_p}}
 				<br>
-				<input class = "btn btn-danger btn-block" type="submit" value="Confirm">
+				<input class = "btn btn-danger btn-block" type="submit" value="Add">
 				<a href="/sightings/", class="btn btn-success btn-block active", role="button", aria-pressed="true">Back to Sightings</a>
-				<a href="/sightings/add/", class="btn btn-success btn-block active", role="button", aria-pressed="true">Add a Squirrel Sighting</a>
 			</form>
 			<br>
 			<br>
 		</p>
-
 	</body>
 </html>

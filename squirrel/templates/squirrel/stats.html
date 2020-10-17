@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <meta name = 'author', content = 'Mudi Li & Ankang Yang'>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <title>squirrel sightings summary</title>
+	</head>
+		
+	<body>
+		<p>
+			<h1 class='text-center'><strong> Squirrelhub </strong></h1>
+			<br>
+			<br>
+			<div>
+				<h2 class="btn btn-outline-warning btn-block active"><strong> Statistical Information about Squirrel Sightings</strong></h2>
+			</div>
+			<br>
+			<div>
+				<h2 class='text-center'>We have <strong>{{total_count}}</strong> squirrel sighting records</h2>
+			</div>
+			<br>
+			<div>
+				<table class="table">
+					<thead class="btn-secondary">
+						<tr>
+							<th scope="col"><strong>INDICATOR</strong></th>
+							<th scope="col"><strong>QUANTITY (not include null)</strong></th>
+							<th scope="col"><strong>PROPORTION (not include null)</strong></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<th><strong>shift: AM</strong></th>
+							<td><strong>{{ AM_count }}</strong></td>
+							<td><strong>{{ AM_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>shift: PM</strong></th>
+							<td><strong>{{ PM_count }}</strong></td>
+							<td><strong>{{ PM_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>age: adult</strong></th>
+							<td><strong>{{ Adult_count }}</strong></td>
+							<td><strong>{{ Adult_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>age: juvenile</strong></th>
+							<td><strong>{{ Juvenile_count }}</strong></td>
+							<td><strong>{{ Juvenile_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>primary_fur_color: gray</strong></th>
+							<td><strong>{{ Gray_count }}</strong></td>
+							<td><strong>{{ Gray_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>primary_fur_color: Cinnamon</strong></th>
+							<td><strong>{{ Cinnamon_count }}</strong></td>
+							<td><strong>{{ Cinnamon_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>primary_fur_color: black</strong></th>
+							<td><strong>{{ Black_count }}</strong></td>
+							<td><strong>{{ Black_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>location: Above Ground</strong></th>
+							<td><strong>{{ AG_count }}</strong></td>
+							<td><strong>{{ AG_ratio }}</strong></td>
+						</tr>
+						<tr>
+							<th><strong>location: Ground Plane</strong></th>
+							<td><strong>{{ GP_count }}</strong></td>
+							<td><strong>{{ GP_ratio }}</strong></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br>
+			<br>
+		</p>
+	</body>
+</html>
