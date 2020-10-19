@@ -6,7 +6,7 @@ This project is for tracking squirrels in Central Park. It can import the 2018 C
 This project is `Django` based.
 
 ### Group Name and Section
-Mudi & Kahn, Fall A 2020
+Mudi & Kahn, section 1
 
 ### UNIs
 UNIs: [ml4538, ay2514]
