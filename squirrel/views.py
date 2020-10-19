@@ -29,15 +29,16 @@ def sightings(request):
 
 
 	
-def update(request,unique_squirrel_id ):
-    sighting = Sightings.objects.get(unique_squirrel_id = unique_squirrel_id )
-	
-    if request.method == 'POST' and request.POST:
+def update(request,unique_squirrel_id):
+
+    if request.method == 'POST':
+        sighting = Sightings.objects.get(unique_squirrel_id=unique_squirrel_id)
         form = sightingForm(request.POST, instance = sighting)
         if form.is_valid():
             form.save()
             return redirect(f'/sightings/{unique_squirrel_id}')
     else:
+        sighting = Sightings.objects.get(unique_squirrel_id=unique_squirrel_id)
         form = sightingForm(instance = sighting)
 	
     context = {
@@ -46,8 +47,9 @@ def update(request,unique_squirrel_id ):
 		
     return render(request, 'squirrel/update.html', context)
 	
+
 def add(request):
-    if request.method == 'POST' and request.POST:
+    if request.method == 'POST':
         form = sightingForm(request.POST)
         if form.is_valid():
             form.save()
@@ -92,7 +94,7 @@ def stats(request):
     GP_ratio = "{:.2%}".format(GP_count/(AG_count+GP_count))
 
     context = {
-	'total_count' : total_count,
+	'total_count' : total_count[0],
 	'shift' : {'AM_count': AM_count, 'PM_count':PM_count},
 	'shift_ratio' : {'AM_ratio': AM_ratio, 'PM_ratio':PM_ratio},
 	'age' : {'Adult_count': Adult_count, 'Juvenile_count':Juvenile_count},
@@ -103,7 +105,7 @@ def stats(request):
 	'location_ratio' : {'AG_ratio': AG_ratio, 'GP_ratio':GP_ratio},
 	}
 
-    return render(request, 'squirrel/stats.html', context)
+    return render(request, 'squirrel/stats.html',context)
 
 
 
