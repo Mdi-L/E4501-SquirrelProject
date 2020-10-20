@@ -19,31 +19,49 @@ class Sightings(models.Model):
 		help_text = _('unique_squirrel_id')
 		)
 	
+    AM = 'AM'
+    PM = 'PM'
+    shift_choice = ((AM,'AM'),(PM,'PM'),)
     shift = models.CharField(
 		max_length = 2,
-		help_text = _('shift: AM? PM?')
+                choices = shift_choice,
+                blank = True,
+                null = True,
+		help_text = _('shift: AM? PM? leave it blank if do not known')
 		)
 
     date = models.DateField(
-		help_text = _('date')
+                help_text = _('date:xxxx-xx-xx')
 		)
 
+    Adult = 'Adult'
+    Juvenile = 'Juvenile'
+    age_choice = ((Adult,'Adult'),(Juvenile,'Juvenile'))
     age = models.CharField(
 		max_length = 20,
+                choices = age_choice,
 		blank = True,
 		null = True,
 		help_text = _('age: Adult? Juvenile? leave it blank if do not known')
 		)
-
+    Gray = 'Gray'
+    Cinnamon = 'Cinnamon'
+    Black = 'Black'
+    fcolor_choice = ((Gray,'Gray'),(Cinnamon,'Cinnamon'),(Black,'Black'))
     primary_fur_color = models.CharField(
 		max_length = 20,
+                choices = fcolor_choice,
 		blank = True,
 		null = True,
 		help_text = _('primary fur color: Gray? Cinnamon? Black? leave it blank if do not known')
 		)
 
+    AG = 'Above Ground'
+    GP = 'Ground Plane'
+    l_choice = ((AG,'Above Ground'),(GP,'Ground Plane'))
     location = models.CharField(
 		max_length = 50,
+                choices = l_choice,
 		blank = True,
 		null = True,
 		help_text = _('location: Above Ground? Ground Plane? leave it blank if do not known')
@@ -127,6 +145,7 @@ class Sightings(models.Model):
 		default = False,
 		help_text = _('runs from?')
 		)
+
     def __str__(self):
         return self.name
 
