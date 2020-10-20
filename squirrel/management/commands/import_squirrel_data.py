@@ -12,13 +12,16 @@ class Command(BaseCommand):
         path = options['file_path']
 
         with open(path) as fp:
-            data=csv.DictReader(fp)
+            data=csv.reader(fp)
 
-        def trans_bool(origin):
-            return str(origin).lower() == 'true'
-			
+            def trans_bool(origin):
+                return str(origin).lower() == 'true'
+            
+            firstrow = True 
             for row in data:
-    
+                if firstrow:
+                    firstrow = False
+                    continue
                 Sightings.objects.get_or_create(
                         latitude = float(row[0]),
                         longitude = float(row[1]),
